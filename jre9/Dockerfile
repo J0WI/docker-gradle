@@ -5,9 +5,6 @@ CMD ["gradle"]
 ENV GRADLE_HOME /opt/gradle
 ENV GRADLE_VERSION 4.6
 
-# cacerts from JDK 8u152 to workaround http://bugs.java.com/view_bug.do?bug_id=8189357
-COPY cacerts /etc/ssl/certs/java/cacerts
-
 ARG GRADLE_DOWNLOAD_SHA256=98bd5fd2b30e070517e03c51cbb32beee3e2ee1a84003a5a5d748996d4b1b915
 RUN set -o errexit -o nounset \
 	&& echo "Downloading Gradle" \
